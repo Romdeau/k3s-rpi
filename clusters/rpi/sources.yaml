@@ -1,14 +1,12 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: base
+  name: sources
   namespace: flux-system
 spec:
-  interval: 1h
+  interval: 1d
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./base/rpi
+  path: ./sources
   prune: true
-  dependsOn:
-    - name: sources
