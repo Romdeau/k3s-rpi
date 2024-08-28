@@ -1,20 +1,24 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: pihole
+  namespace: pihole
 spec:
-  releaseName: pihole
+  interval: 24h
+  timeout: 10m
   chart:
     spec:
-      chart: pihole
+      chart: podinfo
+      version: '2.26.*'
       sourceRef:
         kind: HelmRepository
         name: pihole
-        namespace: flux-system
-      version: "2.26.1"
-  interval: 24h
-  timeout: 35m0s
+      interval: 5m
+  releaseName: pihole
   install:
+    remediation:
+      retries: 3
+  upgrade:
     remediation:
       retries: 3
   valuesFrom:
