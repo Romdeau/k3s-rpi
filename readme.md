@@ -27,3 +27,15 @@ flux bootstrap github \
   --path=./clusters/rpi \
   --read-write-key
 ```
+
+## Pihole
+
+Taking an initial stab at this with [this helmchart by MoJo2600](https://github.com/MoJo2600/pihole-kubernetes)
+
+```bash
+helm repo add mojo2600 https://mojo2600.github.io/pihole-kubernetes/
+helm repo update
+helm search repo mojo2600/pihole --versions
+```
+
+At time of writing the newest chart is `2.26.1`
