@@ -5,10 +5,11 @@ metadata:
   namespace: pihole
 namespace: pihole
 resources:
-  - pihole-chart.yaml
-configMapGenerator:
-  - name: pihole-values
-    files:
-      - values.yaml=values.yaml
-configurations:
-  - kustomizeconfig.yaml
+  - pihole-deployment.yaml
+#   - pihole-chart.yaml
+# configMapGenerator:
+#   - name: pihole-values
+#     files:
+#       - values.yaml=values.yaml
+# configurations:
+#   - kustomizeconfig.yaml
