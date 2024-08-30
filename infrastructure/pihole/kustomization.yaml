@@ -5,7 +5,6 @@ metadata:
   namespace: pihole
 namespace: pihole
 resources:
-  - namespace.yaml
   - pihole-chart.yaml
 configMapGenerator:
   - name: pihole-values
